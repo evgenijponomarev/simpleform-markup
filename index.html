@@ -201,9 +201,9 @@
 
   <script>
     function onSubmitWithParams() {
-      console.log('onSubmitWithParams')
       const extendedField = document.createElement('input');
       extendedField.name = 'extendedField'; // Название нового поля
+      extendedField.type = 'hidden'; // Тип нового поля
       extendedField.value = 'extendedFieldValue'; // Значение нового поля
       document.querySelector('#form').appendChild(extendedField);
     }
