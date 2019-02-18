@@ -107,7 +107,7 @@
   </style>
 </head>
 <body>
-  <form>
+  <form id="form">
     <h1>Заголовок формы</h1>
 
     <div class="field">
@@ -193,8 +193,20 @@
     <div class="buttons">
       <button type="reset">Сброс</button>
 
+      <button type="submit" onClick="onSubmitWithParams()">Отправить с дополнительным полем</button>
+
       <button type="submit">Отправить</button>
     </div>
   </form>
+
+  <script>
+    function onSubmitWithParams() {
+      console.log('onSubmitWithParams')
+      const extendedField = document.createElement('input');
+      extendedField.name = 'extendedField'; // Название нового поля
+      extendedField.value = 'extendedFieldValue'; // Значение нового поля
+      document.querySelector('#form').appendChild(extendedField);
+    }
+  </script>
 </body>
 </html>
